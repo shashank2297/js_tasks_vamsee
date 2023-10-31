@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter game</title>
+</head>
+<style>
+    section {
+        margin-left: 340px;
+        margin-top: 50px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        height: 350px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 60px;
+    }
+
+    .plus {
+        background-color: rgb(244, 68, 68);
+        width: 35px;
+        border-radius: 4px;
+        color: white;
+        font-size: 30px;
+        border: 1px solid white;
+    }
+
+    .minus {
+        background-color: rgb(8, 95, 8);
+        width: 35px;
+        border-radius: 4px;
+        color: white;
+        font-size: 30px;
+        border: 1px solid white;
+    }
+
+    .reset {
+        background-color: rgb(131, 129, 129);
+        color: white;
+        padding: 5px;
+        width: 60px;
+        height: 40px;
+        position: relative;
+        top: -5px;
+        border: 1px solid white;
+        border-radius: 4px;
+    }
+</style>
+
+<body>
+    <section>
+        <h1>Counter</h1>
+        <p>0</p>
+        <button class="plus" onclick="cminus()">-</button>
+        <button class="reset" onclick="creset()">Reset</button>
+        <button class="minus" onclick="cplus()">+</button>
+    </section>
+    <script>
+
+        let a = 0;
+
+        function cplus() {
+            a = a + 1;
+            document.querySelector("p").innerHTML = a;
+        }
+        function cminus() {
+            a = a - 1;
+            document.querySelector("p").innerHTML = a;
+        }
+
+        function creset() {
+            a = 0;
+            document.querySelector("p").innerHTML = a;
+        }
+    </script>
+</body>
+
+</html>

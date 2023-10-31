@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        section {
+            margin-left: 340px;
+            margin-top: 50px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 5px silver;
+            width: 600px;
+            height: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        input {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+
+            background-color: lightblue;
+            width: 160px;
+            border-radius: 4px;
+            font-size: 20px;
+            border: 1px solid white;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Age Calculator</h1>
+        <p>Enter your date of birth</p>
+        <input type="date" id="date" name="date">
+        <br>
+        <button onclick="calculate()">Calculate Age</button>
+        <p id="agecalc"></p>
+    </section>
+    <script>
+
+        function calculate() {
+
+            let enteredYear = document.getElementById("date").value;
+            let enteredYear1 = Number(enteredYear.substr(0, 4));
+            let enteredMonth = Number(enteredYear.substr(5, 2))
+            let currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+            let currentMonth = currentDate.getMonth() + 1;
+            let month = currentMonth - enteredMonth
+            let age = currentYear - enteredYear1
+
+            if (!(enteredYear1 == 0) && !(enteredYear1 > currentYear) && !(enteredMonth == 0)) {
+                if (month < 0) {
+                    age--;
+                    month += 12;
+                }
+                document.getElementById("agecalc").innerHTML = "Your age is " + age + " and " + month + " months old";
+            } else {
+                document.getElementById("agecalc").innerHTML = "Please enter valid DOB";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

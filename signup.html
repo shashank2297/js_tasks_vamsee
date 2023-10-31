@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin-left: 340px;
+            margin-top: 50px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            height: 530px;
+            text-align: center;
+        }
+
+        input {
+            margin-bottom: 16px;
+            font-size: 20px;
+            outline: none;
+        }
+    </style>
+</head>
+
+
+<body>
+    <form action="#">
+        <h1>New User SignUp form</h1>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name">
+        <p id="nvalid"></p>
+        <br>
+        <input type="text" id="userName" name="userName" placeholder="User Name">
+        <p id="uvalid"></p>
+        <br>
+        <input type="text" id="email" name="email" placeholder="Email">
+        <p id="evalid"></p>
+        <br>
+        <input type="text" id="passw" name="passw" placeholder="Password">
+        <p id="pvalid"></p>
+        <br>
+        <input type="text" id="telephone" name="telephone" placeholder="Telephone">
+        <p id="tvalid"></p>
+        <br>
+        <input type="pan" id="pan" name="pan" placeholder="PanCard">
+        <p id="panvalid"></p>
+    </form>
+    <script>
+
+        let fname = document.getElementById("firstName");
+        let usn1 = document.getElementById("userName");
+        let pswrd1 = document.getElementById("passw");
+        let mail1 = document.getElementById("email");
+        let tel1 = document.getElementById("telephone");
+        let pancard1 = document.getElementById("pan");
+
+        fname.addEventListener("keyup", () => {
+
+            let namereg = /^[A-Z][A-Za-z]{4,15}$/;
+            let name = document.getElementById("firstName").value;
+
+            if (!namereg.test(name)) {
+                document.getElementById("nvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("firstName").style.border = "2px solid red"
+
+            } else {
+                document.getElementById("firstName").style.border = "2px solid green"
+                document.getElementById("nvalid").innerHTML = ""
+            }
+        })
+
+        usn1.addEventListener("keyup", () => {
+
+            let usn = document.getElementById("userName").value;
+            let usnreg = /^[A-Za-z0-9_.@]{5,12}$/;
+            if (!usnreg.test(usn)) {
+                document.getElementById("uvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("userName").style.border = "2px solid red"
+
+            } else {
+                document.getElementById("userName").style.border = "2px solid green"
+                document.getElementById("uvalid").innerHTML = ""
+            }
+        })
+
+        pswrd1.addEventListener("keyup", () => {
+
+            let pswrdreg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*/?.,~`])[A-Za-z\d!@#$%^&*/?.,~`]{8,20}$/
+            let pswrd = document.getElementById("passw").value;
+
+            if (!pswrdreg.test(pswrd)) {
+                document.getElementById("pvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("passw").style.border = "2px solid red"
+
+            } else {
+                document.getElementById("passw").style.border = "2px solid green"
+                document.getElementById("pvalid").innerHTML = ""
+            }
+        })
+
+        mail1.addEventListener("keyup", () => {
+
+            let mailregex = /^[A-Za-z\d._]+@[A-Za-z]+\.[A-Za-z.]{3,}$/;
+            let mail = document.getElementById("email").value;
+
+            if (!mailregex.test(mail)) {
+                document.getElementById("evalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("email").style.border = "2px solid red"
+
+            } else {
+                document.getElementById("email").style.border = "2px solid green"
+                document.getElementById("evalid").innerHTML = ""
+            }
+        })
+
+        tel1.addEventListener("keyup", () => {
+
+
+            let telregex = /^[6-9]{1}\d{9}$/;
+            let tel = document.getElementById("telephone").value;
+
+            if (!telregex.test(tel)) {
+                document.getElementById("tvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("telephone").style.border = "2px solid red"
+
+            } else {
+                document.getElementById("telephone").style.border = "2px solid green"
+                document.getElementById("tvalid").innerHTML = ""
+            }
+        })
+        pancard1.addEventListener("keyup", () => {
+
+            let pancard = document.getElementById("pan").value;
+            let panregex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/
+
+            if (!panregex.test(pancard)) {
+                document.getElementById("panvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("pan").style.border = "2px solid red"
+
+            } else {
+                document.getElementById("pan").style.border = "2px solid green"
+                document.getElementById("panvalid").innerHTML = ""
+            }
+        })
+
+    </script>
+</body>
+
+</html>
