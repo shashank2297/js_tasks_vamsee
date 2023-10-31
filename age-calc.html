@@ -67,8 +67,8 @@
                 let month = currentMonth - enteredMonth;
                 let age = currentYear - enteredYear1;
 
-                if (age <= 0 && month < 0) {
-                    document.getElementById("agecalc").innerHTML = "Please recheck the input seems wrong";
+                if (age == 0 && month < 0) {
+                    document.getElementById("agecalc").innerHTML = "Please recheck the input something seems wrong";
                 } else if (month < 0) {
                     age--;
                     month += 12;
