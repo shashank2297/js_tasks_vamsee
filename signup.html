@@ -12,7 +12,7 @@
             padding: 20px;
             box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
             width: 600px;
-            height: 530px;
+            height: auto;
             text-align: center;
         }
 
@@ -61,7 +61,7 @@
             let name = document.getElementById("firstName").value;
 
             if (!namereg.test(name)) {
-                document.getElementById("nvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("nvalid").innerHTML = "Name must contain 5-15 characters"
                 document.getElementById("firstName").style.border = "2px solid red"
 
             } else {
@@ -90,7 +90,7 @@
             let pswrd = document.getElementById("passw").value;
 
             if (!pswrdreg.test(pswrd)) {
-                document.getElementById("pvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("pvalid").innerHTML = "Password must be alphanumeric and contains between 8-20 characters"
                 document.getElementById("passw").style.border = "2px solid red"
 
             } else {
@@ -105,7 +105,7 @@
             let mail = document.getElementById("email").value;
 
             if (!mailregex.test(mail)) {
-                document.getElementById("evalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("evalid").innerHTML = "Enter valid email address"
                 document.getElementById("email").style.border = "2px solid red"
 
             } else {
@@ -121,7 +121,7 @@
             let tel = document.getElementById("telephone").value;
 
             if (!telregex.test(tel)) {
-                document.getElementById("tvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("tvalid").innerHTML = "Enter valid phone number"
                 document.getElementById("telephone").style.border = "2px solid red"
 
             } else {
@@ -135,7 +135,7 @@
             let panregex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/
 
             if (!panregex.test(pancard)) {
-                document.getElementById("panvalid").innerHTML = "Username must contain 5-15 characters"
+                document.getElementById("panvalid").innerHTML = "Enter valid pan number"
                 document.getElementById("pan").style.border = "2px solid red"
 
             } else {
